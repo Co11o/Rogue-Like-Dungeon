@@ -1,0 +1,21 @@
+Jackson Collalti
+1/30: Have screen bounds working. Added feature of 6+ generating rooms all seperated within
+    all the valid area. Started on linking rooms using corridors, currently doesn't work, 
+    likely an error in pathing generation of corridors
+
+2/1: Completed Corridor mapping where a random point from two rooms is selected to be linked
+    with the previously created room. Current bug of always 6 rooms being generated
+
+2/2: Fixed issue of only 6 rooms being added now it range from 7-10 rooms. Started and implemented
+    hardness switching to using a 2d array of "Cells" instead of chars. Cells hold a char and a 
+    hardness integer. Updated all methods that were using the old char grid. Not a bug but I want 
+    to change my corridor generating method to look nicer possibly adding non straight lines 
+
+2/3: Modified the Corridor mapping to start by going horizontal then to vertical rather than
+    vertical to horizontal. Along with updating rooms to generate taller making the visual 
+    appear less chaotic. Also created Makefile
+
+2/4: Moved all of the generation into its own file and header for organization. Submitted
+
+2/5: Added possibability of stairs being located into corridors, also added error for when
+    a valid room configuration is not possible. Resubmitted
