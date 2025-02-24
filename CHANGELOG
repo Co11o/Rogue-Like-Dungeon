@@ -1,21 +1,22 @@
 Jackson Collalti
-1/30: Have screen bounds working. Added feature of 6+ generating rooms all seperated within
-    all the valid area. Started on linking rooms using corridors, currently doesn't work, 
-    likely an error in pathing generation of corridors
+2/8: Changed structs previously only had a Cell's which had hardness and character type.
+    Now have room struct containing top right corner X coordinate and Y coordinate then 
+    width and height of the room. Cell's still remains. Another new struct Stair has a 
+    stair location x and y then direction 1 means stair going up and -1 is stair going down
+    other values are an error. Finally a struct'Dungeon' is made up of [80][21] array Cell's 
+    representing the screen, Array of Rooms in the dungeon, room count of total rooms. Integers
+    for location of PC X and Y coordinates, Integers for total stair cases up and stair cases down.
+    Array of all stairs structs in the dungeon. Just for simplicity corridor mapping is now done 
+    through connecting the middle of each room to the previous. Might go back to random x and y 
+    connections of rooms. Generation works with new structs
 
-2/1: Completed Corridor mapping where a random point from two rooms is selected to be linked
-    with the previously created room. Current bug of always 6 rooms being generated
+2/9: Created new load and save features. Both are untested functions and still need to be implemented 
+    into main. Also need to add implement getting file path and getting file that needs to be read
+    
+2/11: Added code that allows main to get the file path /.rlg327/dungeon. Tested load and save funtions
+    both failed and needed to change struct properties from ints to uint's of the correct sizes. Fixed
+    bug where load and save overwriting PC character with stairs or room character. Base test 1-10 work
+    along with --save then calling --load but adventure, hello, and well_done dungeons have seg faults.
 
-2/2: Fixed issue of only 6 rooms being added now it range from 7-10 rooms. Started and implemented
-    hardness switching to using a 2d array of "Cells" instead of chars. Cells hold a char and a 
-    hardness integer. Updated all methods that were using the old char grid. Not a bug but I want 
-    to change my corridor generating method to look nicer possibly adding non straight lines 
-
-2/3: Modified the Corridor mapping to start by going horizontal then to vertical rather than
-    vertical to horizontal. Along with updating rooms to generate taller making the visual 
-    appear less chaotic. Also created Makefile
-
-2/4: Moved all of the generation into its own file and header for organization. Submitted
-
-2/5: Added possibability of stairs being located into corridors, also added error for when
-    a valid room configuration is not possible. Resubmitted
+2/12: Fixed seg faults by fixing an error where a max number of rooms or stairs caused misalligned reads
+    leading to seg faults. No known bugs. Submitted
