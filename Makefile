@@ -1,5 +1,5 @@
-dungeon: dungeon_generation.o dungeon_main.o dungeon_save_and_load.o priority_queue.o dijkstra.o
-	gcc dungeon_generation.o dungeon_main.o dungeon_save_and_load.o priority_queue.o dijkstra.o -o dungeon
+dungeon: dungeon_generation.o dungeon_main.o dungeon_save_and_load.o priority_queue.o dijkstra.o monster.o
+	gcc dungeon_generation.o dungeon_main.o dungeon_save_and_load.o priority_queue.o dijkstra.o monster.o -o dungeon
 
 dungeon_main.o: dungeon_main.c
 	gcc -Wall -Werror dungeon_main.c -g -c
@@ -15,6 +15,9 @@ priority_queue.o: priority_queue.c priority_queue.h
 
 dijkstra.o: dijkstra.c dijkstra.h 
 	gcc -Wall -Werror dijkstra.c -g -c
+
+monster.o: monster.c monster.h 
+	gcc -Wall -Werror monster.c -g -c
 
 clean:
 	rm -f *.o dungeon dungeon.exe *~

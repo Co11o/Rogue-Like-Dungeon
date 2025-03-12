@@ -114,3 +114,23 @@ void decrease_priority(PriorityQueue* pq, int x, int y, int new_priority) {
     pq->queue[index].priority = new_priority;
     heapifyUp(pq, index);
 }
+
+void removeNode(PriorityQueue* pq, int x, int y) {
+    if (pq->size == 0) return; // Nothing to remove
+
+    for (int i = 0; i < pq->size; i++) {
+        if (pq->queue[i].x_location == x && pq->queue[i].y_location == y) {
+            // Move last element to current index
+            pq->queue[i] = pq->queue[pq->size - 1];
+            pq->size--;
+
+            // Ensure we don't call heapify on an invalid index
+            if (i < pq->size) {
+                heapifyDown(pq, i);  // Restore heap property
+            }
+            return;
+        }
+    }
+}
+
+

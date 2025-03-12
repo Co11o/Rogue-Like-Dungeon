@@ -24,5 +24,6 @@ void heapifyDown(PriorityQueue* pq, int index);
 int extractNode(PriorityQueue* pq, queue_node* minNode);
 int peek(PriorityQueue* pq, queue_node* minNode);
 void decrease_priority(PriorityQueue* pq, int x, int y, int new_priority);
+void removeNode(PriorityQueue* pq, int x, int y);
 
 #endif

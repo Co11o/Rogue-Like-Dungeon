@@ -1,0 +1,20 @@
+Jackson Collalti
+2/26: Created Character Map struct which is an array of char's the width of the screen and an array of characters. Created initialization
+    function for monsters and character map
+
+2/27: Completed movement for Intelligent and Telepathic monster (Tunneling and Non-Tunneling). Also created Eratic movement. Tested both
+
+2/28: Created and tested Line of sight function, finish all Intelligent monsters
+
+3/1: Created and tested all Non Intelligent monster movements. Began on character priority queue.
+
+3/2: Continued work on movement queue. Still need to work on removing node for a monster that dies and handling dead monsters
+
+3/3: Fixed issue with dead monsters still being in queue. Finished code in main for movement.
+
+3/4: Commented out all non essential print statements. Debugging and got one seg fault error while not running in debug mode, haven't been able to replicate. Either I fixed the issue when cleaning up code or
+    updating. Also possible a bug exists somewhere. If a bug exists it's very small since in 2 days of through testing the error only popped up twice in a couple 
+    hundred excutions. Only go errors when running not in gdb
+
+3/4: (Part 2) segfault caused by when a character kills another character and the list of characters is full. Previous was searching through list to find first invalid array item, but if the list is full of valid
+    entries the search would go past the bounds. Also updated main to use malloc's/free's for new priority queue and character_map. Submitted

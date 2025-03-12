@@ -102,7 +102,16 @@ int init_Rooms(Dungeon *dungeon) {
                     dungeon->PCCell.hardness=0;
                     dungeon->PCCell.type = '.';
                 }
-                dungeon->grid[dungeon->player_y][dungeon->player_x].type = '@';
+               
+               
+               
+               
+               
+               
+               
+               
+                //---------------------------COME BACK TO------------------------//
+                dungeon->grid[dungeon->player_y][dungeon->player_x].type = '.';
             }
 
             if(i==4 && dungeon->stair_down_count == 0){

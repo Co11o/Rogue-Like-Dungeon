@@ -212,7 +212,7 @@ int load_dungeon(const char *path, Dungeon *dungeon)
 
     dungeon->PCCell.hardness=0;
     dungeon->PCCell.type = dungeon->grid[dungeon->player_y][dungeon->player_x].type;
-    dungeon->grid[dungeon->player_y][dungeon->player_x].type = '@';
+    dungeon->grid[dungeon->player_y][dungeon->player_x].type = '.';
 
     fclose(f);
     return 0;
